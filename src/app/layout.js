@@ -1,4 +1,3 @@
-import { UserProvider } from '@auth0/nextjs-auth0/client';
 import {Providers} from "./providers";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -22,16 +21,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-       <UserProvider>
-          <Providers>
-              <body
-                className="dark text-foreground bg-background antialiased"
-              >
-                {children}
-              </body>
-           
-          </Providers>
-      </UserProvider>
+      <Providers>
+          <body
+            className="text-foreground bg-background antialiased"
+          >
+            {children}
+          </body>
+      </Providers>
     </html>
   );
 }
